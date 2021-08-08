@@ -139,5 +139,11 @@ int query(int x, int l, int r, int idx) {
 
 有沒有發現這個做法好像似曾相似？其實**單調隊列優化**就是斜率優化的特例喔！
 
+## 題目 APIO 2010 Commando
+
+[題目連結](https://tioj.ck.tp.edu.tw/problems/1745)
+
+
+
 
 
