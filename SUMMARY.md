@@ -21,4 +21,5 @@
     * [資料結構優化](simple-note/dynamic-programming/dp-opt-time/zi-liao-jie-gou-you-hua.md)
     * [單調隊列優化](simple-note/dynamic-programming/dp-opt-time/chan-diao-dui-lie-you-hua.md)
     * [SOS 優化](simple-note/dynamic-programming/dp-opt-time/sos-you-hua.md)
+    * [斜率優化 \(Convex Hull Trick\)](simple-note/dynamic-programming/dp-opt-time/xie-lv-you-hua-convex-hull-trick.md)
 
