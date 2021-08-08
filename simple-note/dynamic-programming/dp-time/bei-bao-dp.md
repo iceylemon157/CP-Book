@@ -35,9 +35,6 @@ description: 施工中
 
 1. [\[CF 336C\]](https://codeforces.com/problemset/problem/366/C)
 2. [\[LG 1954\]](https://www.luogu.com.cn/problem/P1941)
-3. [\[LG 1858\]](https://www.luogu.com.cn/problem/P1858) 01背包前 k
-
- 優解的價值和
-
-[\[CF 864E\]](https://codeforces.com/problemset/problem/864/E) \(未解\)
+3. [\[LG 1858\]](https://www.luogu.com.cn/problem/P1858) 01背包前 k優解的價值和
+4. [\[CF 864E\]](https://codeforces.com/problemset/problem/864/E)
 
