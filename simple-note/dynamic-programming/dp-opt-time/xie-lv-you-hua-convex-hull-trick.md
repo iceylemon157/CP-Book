@@ -204,9 +204,6 @@ $$dp(x)=\min\limits_{y\in S_x}\{dp(y)+a(x)b(y)\}$$，其中$$S_x$$代表以$$x$$
 #define endl '\n'
 #define pb push_back
 #define pii pair<int, int>
-#define all(x) x.begin(), x.end()
-#define mem(x, a) memset(x, a, sizeof(x))
-#define FFOR(i, a, b) for(int i = a; i <= b; i ++)
 #define FOR(i, n) FFOR(i, 1, n)
 #define loli ios_base::sync_with_stdio(false), cin.tie(0);
 using namespace std;
@@ -300,13 +297,8 @@ void dfs(int x, int fa = -1) {
     LCT.add(tmp);
 }
  
-void solve() {
-    init(1);
-    dfs(1);
-    for ++FOR(i, n) cout << dp[i] << ' '; cout << endl;   
-}
-
-void input() {
+signed main() {
+    loli;
     cin >> n;
     FOR(i, n) cin >> a[i], a[i] = -a[i];
     FOR(i, n) cin >> b[i], b[i] = -b[i];
@@ -316,11 +308,9 @@ void input() {
         vc[a].pb(b);
         vc[b].pb(a);
     }
-}
-
-signed main(){
-    loli;
-    (
+    init(1);
+    dfs(1);
+    FOR(i, n) cout << dp[i] << ' '; cout << endl;   
 }
 ```
 
