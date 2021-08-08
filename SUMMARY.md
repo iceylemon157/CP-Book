@@ -4,5 +4,6 @@
 
 ## 一些小筆記 <a id="simple-note"></a>
 
-* [Untitled](simple-note/untitled.md)
+* [Dynamic Programming](simple-note/untitled.md)
+* [Untitled](simple-note/untitled-1.md)
 
