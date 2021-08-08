@@ -4,7 +4,8 @@
 
 ## 一些小筆記 <a id="simple-note"></a>
 
-* [Dynamic Programming](simple-note/dynamic-programming.md)
-* [DP Time](simple-note/dp-time.md)
-* [Untitled](simple-note/untitled-1.md)
+* [Dynamic Programming](simple-note/dynamic-programming/README.md)
+  * [DP Time](simple-note/dynamic-programming/dp-time/README.md)
+    * [LIS と LCS](simple-note/dynamic-programming/dp-time/untitled-1.md)
+    * [二維 DP](simple-note/dynamic-programming/dp-time/er-wei-dp.md)
 
