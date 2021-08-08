@@ -190,7 +190,137 @@ $$dp(x)=\min\limits_{y\in S_x}\{dp(y)+a(x)b(y)\}$$，其中$$S_x$$代表以$$x$$
 
 這時候我們如果把焦點放在$$x$$跟他的小孩身上，就會發現如果他的每一個小孩都建好了一棵李超線段樹，那麼就只需要把他們全部合併就好了。嗯？合併？所以我們就可以合理的想到樹上啟發式合併啦！
 
-但是李超線段樹要怎麼做樹上啟發式呢？我總不能開$$N$$棵李超線段樹。等等，我不行嗎？
+但是李超線段樹要怎麼做樹上啟發式呢。總不能開$$N$$棵李超線段樹吧？等等，我不行嗎？別忘了李超線段樹也是線段樹！動態開點！至此我們就可以把這題用樹上啟發式+斜率優化+動態開點解掉啦~
 
-如果只開一棵的話，線段樹用完就要清空，memset又會變回接近$$O(N)$$清空。等等，為什麼要用
+但是因為作者太菜了，已經 $$N$$年沒有寫過動態開點這種東西\(其實我根本沒有想到\)。所以我就往其他的方向去想。因為一次插入只會影響到$$logN$$個節點，那我要刪除的時候就把那些被影響到的節點清空就可以了。因為插入多少節點就會清空多少節點，所以複雜度是不會影響的！那麼就可以不用再寫動態開點了。
+
+程式碼如下
+
+```cpp
+#include "bits/stdc++.h"
+#define int long long
+#define f first
+#define s second
+#define endl '\n'
+#define pb push_back
+#define pii pair<int, int>
+#define all(x) x.begin(), x.end()
+#define mem(x, a) memset(x, a, sizeof(x))
+#define FFOR(i, a, b) for(int i = a; i <= b; i ++)
+#define FOR(i, n) FFOR(i, 1, n)
+#define loli ios_base::sync_with_stdio(false), cin.tie(0);
+using namespace std;
+const int maxn = 1e5 + 50;
+
+int n, m, q, k, ans, inf = 1e15;
+vector<int> vc[maxn];
+int dp[maxn], a[maxn], b[maxn];
+int sz[maxn], mxson[maxn];
+
+struct segment {
+    int m = 0, k = -inf;
+    int val(int x) {
+        return m * x + k;
+    }
+} tr[maxn * 8];
+
+struct LiChao {
+    vector<int> vc;
+    #define ls (idx << 1)
+    #define rs (idx << 1 | 1)
+    void clear() {
+        for(int i : vc) tr[i] = {0, -inf};
+        vc.clear();
+    }
+    void add(segment seg, int l = 0, int r = 2e5, int idx = 1) {
+        vc.pb(idx);
+        if(l == r) {
+            if(seg.val(l) > tr[idx].val(l)) tr[idx] = seg;
+            return;
+        }
+        int md = (l + r) / 2;
+        if(seg.m < tr[idx].m) swap(seg, tr[idx]);
+        if(seg.val(md - 1e5) > tr[idx].val(md - 1e5)) {
+            swap(seg, tr[idx]);
+            add(seg, l, md, ls);
+        }
+        else add(seg, md + 1, r, rs);
+    }
+    int qry(int v, int l = 0, int r = 2e5, int idx = 1) {
+        if(l == r) return tr[idx].val(v);
+        int md = (l + r) / 2;
+        int ret = tr[idx].val(v);
+        if(v <= (md - 1e5) ) ret = max(ret, qry(v, l, md, ls));
+        else ret = max(ret, qry(v, md + 1, r, rs));
+        return ret;
+    }
+} LCT;
+
+void init(int x, int fa = -1) {
+    int tmp = 0;
+    sz[x] = 1;
+    for(int i : vc[x]) {
+        if(i == fa) continue;
+        init(i, x);
+        sz[x] += sz[i];
+        if(tmp < sz[i]) mxson[x] = i, tmp = sz[i];
+    }
+}
+
+inline int A(int x) {
+    return -b[x];
+}
+
+inline int B(int x) {
+    return -dp[x];
+}
+
+void upd(int x, int fa) {
+    segment tmp = {A(x), B(x)};
+    LCT.add(tmp);
+    for(int i : vc[x]) {
+        if(i == fa) continue;
+        upd(i, x);
+    }
+}
+
+void dfs(int x, int fa = -1) {
+    for(int i : vc[x]) {
+        if(i == fa or i == mxson[x]) continue;
+        dfs(i, x);
+        LCT.clear();
+    }
+    if(mxson[x]) dfs(mxson[x], x);
+    for(int i : vc[x]) {
+        if(i == fa or i == mxson[x]) continue;
+        upd(i, x);
+    }
+    if(sz[x] != 1) dp[x] = -LCT.qry(a[x]);
+    segment tmp = {A(x), B(x)};
+    LCT.add(tmp);
+}
+ 
+void solve() {
+    init(1);
+    dfs(1);
+    for ++FOR(i, n) cout << dp[i] << ' '; cout << endl;   
+}
+
+void input() {
+    cin >> n;
+    FOR(i, n) cin >> a[i], a[i] = -a[i];
+    FOR(i, n) cin >> b[i], b[i] = -b[i];
+    FOR(i, n - 1) {
+        int a, b;
+        cin >> a >> b;
+        vc[a].pb(b);
+        vc[b].pb(a);
+    }
+}
+
+signed main(){
+    loli;
+    (
+}
+```
 
