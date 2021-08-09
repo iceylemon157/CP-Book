@@ -14,7 +14,9 @@ description: 施工中
 
 那我們就可以透過在做 DP 的過程順便維護$$dp$$的前綴和來快速求值。
 
-## 講解
+## 題目
 
-題目：
+1. [ABC 212E](https://atcoder.jp/contests/abc212/tasks/abc212_e)
+2. [LG P2885](https://www.luogu.com.cn/problem/P2885)
+3. [LG P4099](https://www.luogu.com.cn/problem/P4099)
 
