@@ -28,10 +28,14 @@ description: >-
 > $$
 > dp(mask,i)=
 > \left\{
->     \begin{array}{**lr**}
+>     \begin{array}
 >     dp(mask,i-1), & if\ 第i位為0.\\
 >     dp(mask,i-1)+dp(mask\oplus2^i,i-1), & otherwise.
 >     \end{array}
 > \right.
 > $$
+
+如果第$$i$$位是$$0$$的話，那麼$$dp(mask,i)$$跟$$dp(mask,i-1)$$所包含的子集是一模一樣的。
+
+如果第$$i$$位不為$$0$$的話，就要結合有第$$i$$
 
