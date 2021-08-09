@@ -1,7 +1,5 @@
 ---
-description: >-
-  (under construction) SOSDP，Sum over Subsets Dynamic
-  Programming，又稱高維前綴和。多用來解決子集類的求和問題
+description: SOSDP，Sum over Subsets Dynamic Programming，又稱高維前綴和。多用來解決子集類的求和問題
 ---
 
 # SOS 優化
