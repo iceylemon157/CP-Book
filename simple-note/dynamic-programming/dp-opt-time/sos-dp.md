@@ -56,7 +56,7 @@ for(int i = 0; i < n; i ++) {
 
 SOS DP 不只是可以處理前綴和的問題，基本上只要是枚舉子集的題目都可以用類似的手法去做他，至於實際上要怎麼做就取決於你自己的想像力了。
 
-### 題目
+## 題目
 
 1. [CF 165E](https://codeforces.com/contest/165/problem/E)
 2. [CF 383E](https://codeforces.com/contest/383/problem/E)
