@@ -45,7 +45,7 @@ description: >-
 
 現在我們有子集了，如果我們要求解上面那題的話那就對上面的 DP 式作一點修改就可以了。詳細的話就直接看下面的超短程式碼吧：
 
-```text
+```cpp
 for(int i = 0; i < (1 << n); i ++)
     F[i] = a[i];
 for(int i = 0; i < n; i ++) {
@@ -56,5 +56,13 @@ for(int i = 0; i < n; i ++) {
 }
 ```
 
-SOS DP 不只是可以處理前綴和的問題，基本上只要是枚舉子集的題目都可以用類似的手法去做他，至於實際上要怎麼做就要看題目的要求了。
+SOS DP 不只是可以處理前綴和的問題，基本上只要是枚舉子集的題目都可以用類似的手法去做他，至於實際上要怎麼做就取決於你自己的想像力了。
+
+### 題目
+
+1. [CF 165E](https://codeforces.com/contest/165/problem/E)
+2. [CF 383E](https://codeforces.com/contest/383/problem/E)
+3. [CF 449D](https://codeforces.com/contest/449/problem/D)
+4. [CF 1554B](https://codeforces.com/contest/1554/problem/B) 這題有簡單解，但請用 SOS DP 解他
+5. 更多題目可以看 [這裡](https://codeforces.com/blog/entry/45223)
 
