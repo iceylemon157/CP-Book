@@ -200,12 +200,10 @@ $$dp(x)=\min\limits_{y\in S_x}\{dp(y)+a(x)b(y)\}$$，其中$$S_x$$代表以$$x$$
 ```cpp
 #include "bits/stdc++.h"
 #define int long long
-#define f first
-#define s second
 #define endl '\n'
 #define pb push_back
 #define pii pair<int, int>
-#define FOR(i, n) FFOR(i, 1, n)
+#define FOR(i, n) for(int i = 1; i <= n; i ++)
 #define loli ios_base::sync_with_stdio(false), cin.tie(0);
 using namespace std;
 const int maxn = 1e5 + 50;
@@ -314,4 +312,8 @@ signed main() {
     FOR(i, n) cout << dp[i] << ' '; cout << endl;   
 }
 ```
+
+## 題目
+
+1. [LG 5785](https://www.luogu.com.cn/problem/P5785)
 
