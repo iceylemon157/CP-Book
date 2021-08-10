@@ -313,3 +313,7 @@ signed main() {
 }
 ```
 
+## 題目
+
+1. [LG 5785](https://www.luogu.com.cn/problem/P5785)
+
