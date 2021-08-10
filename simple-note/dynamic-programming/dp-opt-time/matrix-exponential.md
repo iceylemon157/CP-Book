@@ -14,7 +14,7 @@ description: 施工中
 
 > $$ \begin{pmatrix} 1 & 1\\ 1 & 0 \end{pmatrix} \begin{pmatrix} F_{i-1}\\ F_{i-2} \end{pmatrix}= \begin{pmatrix}  F_{i-1}+ F_{i-2}\\ F_{i-1} \end{pmatrix}= \begin{pmatrix}  F_{i}\\ F_{i-1} \end{pmatrix}$$
 
-於是我們只要求出最左邊那個轉移矩陣的$$N$$次就可以求出$$F_N$$了。
+於是我們只要求出最左邊那個轉移矩陣的$$N$$次方就可以求出$$F_N$$了。而這樣子的複雜度會是$$O(k^3logN)$$，其中$$k$$為矩陣大小。
 
 矩陣快速冪還有另外一個地方可以使用，有時候在處理多維 DP 時會有一個比較小的狀態，我們可以拿那個狀態來當作我們高中學過的"轉移矩陣"的狀態，那這樣就也可以套矩陣優化了。
 
