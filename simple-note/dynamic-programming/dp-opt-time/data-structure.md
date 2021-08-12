@@ -20,13 +20,31 @@ $$dp[i]=\max\limits_{j<i,a[j]<a[i]}\{dp[j]+1\}$$
 
 那麼我們就可以有一個想法，原本枚舉$$1\sim i-1$$沒有快速的做法，那如果我們枚舉$$1\sim a[i]-1$$呢？我們可以考慮維護一個陣列$$b$$，在$$b[a[j]]$$的位置上記錄$$dp[j]$$\(如果有兩個不同的 DP 在同一個位置，既最大值的那個\)。那麼我們就把問題變成掃過$$b$$中$$1\sim a[i]-1$$的所有位置並且找到最大值，也就是查詢前綴 max！於是我們就可以用一個熟知的資料結構 -- BIT 來把他解掉啦。
 
-有些情況下$$a[i]$$的值可能會比較大，這時候直接離散化
+有些情況下$$a[i]$$的值可能會比較大，這時候直接離散化再做就好了
 
 {% code title="BIT 解 LIS 問題" %}
 ```cpp
-int n, a[maxn], bit[maxn];
-int low(x) { return x & -x; }
-int qry(int x) 
+#define low(x) (x & -x)
+int n, a[maxn], bit[maxn], dp[maxn];
+int query(int x) {
+    int ret = 0;
+    for(; x > 0; x -= low(x)) ret = max(ret, bit[x]);
+    return ret;
+}
+void modify(int x, int v) {
+    for(; x <= n; x += low(x)) bit[x] = max(bit[x], v);
+}
+
+int main() {
+    int ans = 0;
+    for(int i = 1; i <= n; i ++) cin >> a[i];
+    for(int i = 1; i <= n; i ++) {
+        dp[i] = qry(a[i]);
+        modify(a[i], dp[i]);
+        ans = max(ans, dp[i]);
+    }
+    cout << ans << endl;
+}
 ```
 {% endcode %}
 
