@@ -12,4 +12,5 @@ description: 施工中
 
 1. [CF 1557D](https://codeforces.com/contest/1557/problem/D) \(PS. 這題有不需要DP優化的作法 [這篇](https://oosheepyerd79135.gitbook.io/iceylemon_cp/sui-bi/ti-jie/cf-1557d)\)
 2. [\[ZJOI2010\]基站選址](https://www.luogu.com.cn/problem/T175821)
+3. [LG P5298](https://www.luogu.com.cn/problem/P5298)
 
