@@ -22,9 +22,11 @@ $$dp[i]=\max\limits_{j<i,a[j]<a[i]}\{dp[j]+1\}$$
 
 有些情況下$$a[i]$$的值可能會比較大，這時候直接離散化再做就好了
 
-{% code title="BIT 解 LIS 問題" %}
+{% code title="BIT 解 LIS 問題 \(離散化\)" %}
 ```cpp
+#include <bits/stdc++.h>
 #define low(x) (x & -x)
+const int maxn = 2e5 + 50;
 int n, a[maxn], bit[maxn], dp[maxn];
 int query(int x) {
     int ret = 0;
@@ -37,9 +39,13 @@ void modify(int x, int v) {
 
 int main() {
     int ans = 0;
-    for(int i = 1; i <= n; i ++) cin >> a[i];
+    vector<int> vc;
+    for(int i = 1; i <= n; i ++) cin >> a[i], vc.pb(a[i]);
+    sort(vc.begin(), vc.end());
+    vc.resize(unique(vc.begin(), vc.end()) - vc.begin());
     for(int i = 1; i <= n; i ++) {
-        dp[i] = qry(a[i]);
+        a[i] = lower_bound(vc.begin(), vc.end(), a[i]) - vc.begin() + 1;
+        dp[i] = qry(a[i]) + 1;
         modify(a[i], dp[i]);
         ans = max(ans, dp[i]);
     }
@@ -47,6 +53,22 @@ int main() {
 }
 ```
 {% endcode %}
+
+但既然我們有一個簡單的做法\(Vector + 二分搜\)，那為什麼我們還要學這個做法呢？讓我們來看看下面這題
+
+## 例題 Atcoder DP contest Q.Flowers
+
+[題目連結](https://atcoder.jp/contests/dp/tasks/dp_q)
+
+給你$$N$$朵花，由左至右的第$$i$$朵花兩個值高度$$h_i$$跟美麗度$$a_i$$，請拿掉一些花使得由左至右花的高度單調遞增，並且最大化剩下的花的總美麗度。
+
+### 講解
+
+我們一樣可以列出一個 DP 式：
+
+$$dp[i]=\max\limits_{j<i,h[j]<h[i]}\{dp[j]\}+a[i]$$
+
+而這個時候我們就不能使用Vector + 二分搜的方法了\(讀者可以自行思考該方法的過程\)。而資料結構優化的方法仍然是可以用的。\(事實上這兩題的程式碼\)
 
 ## 題目
 
