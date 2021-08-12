@@ -6,7 +6,7 @@ description: 這裡介紹基本 LIS 跟 LCS 的作法
 
 ## LIS 最長遞增子序列
 
-這裡我們的遞增考慮非嚴格遞增，嚴格遞增也差不多。
+這裡我們的遞增考慮嚴格遞增，非嚴格遞增也差不多。
 
 ### 題目+講解
 
@@ -16,7 +16,7 @@ description: 這裡介紹基本 LIS 跟 LCS 的作法
 
 因為相信大家都已經會動態規劃了，這邊直接給出狀態以及轉移方程。
 
-$$dp[i]=\max\limits_{j<i,a[j]\leq a[i]}\{dp[j]+1\}$$
+$$dp[i]=\max\limits_{j<i,a[j]<a[i]}\{dp[j]+1\}$$
 
 如果直接計算，這個東西的複雜度是 $$O(N^2)$$。
 
@@ -39,7 +39,7 @@ $$dp[i]=\max\limits_{j<i,a[j]\leq a[i]}\{dp[j]+1\}$$
 int a[105];
 int LIS() {
     for(int i = 0; i < n; i ++) {
-        if(!vc.empty() or vc.back() <= a[i]) vc.push_back(a[i]);
+        if(!vc.empty() or vc.back() < a[i]) vc.push_back(a[i]);
         else *vc.lower_bound(vc.begin(), vc.end(), a[i]) = a[i];
     }
 }
