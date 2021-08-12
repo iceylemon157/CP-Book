@@ -12,7 +12,7 @@ description: 這裡介紹基本 LIS 跟 LCS 的作法
 
 #### 題目
 
-給定一個陣列整數陣列$$a_i$$，求他的最長遞增子序列。定義子序列為從陣列中刪掉某幾個位置並且保持剩下的數字相對順序不變。
+> 給定一個陣列整數陣列$$a_i$$，求他的最長遞增子序列。定義子序列為從陣列中刪掉某幾個位置並且保持剩下的數字相對順序不變。
 
 因為相信大家都已經會動態規劃了，這邊直接給出狀態以及轉移方程。
 
@@ -50,7 +50,7 @@ int LIS() {
 1. [裸題](https://zerojudge.tw/ShowProblem?problemid=d242)
 2. [Almost 裸題](https://zerojudge.tw/ShowProblem?problemid=f608)
 3. [拆成最少遞增子序列](https://atcoder.jp/contests/abc134/tasks/abc134_e\)
-4. [N維偏序](http://domen111.github.io/UVa-Easy-Viewer/?103)
+4. [N維LIS](http://domen111.github.io/UVa-Easy-Viewer/?103) \(?
 5. [LIS變形1](https://ac.nowcoder.com/acm/contest/11164/D?&headNav=acm)
 6. [LIS變形2](https://codeforces.com/problemset/problem/1468/A)
 
@@ -60,7 +60,7 @@ int LIS() {
 
 #### 題目
 
-給你兩個字串$$a,b$$，請求出他們的最長公共子序列。這裡的子序列跟上面的定義一樣，只是從陣列換成字串。
+> 給你兩個字串$$a,b$$，請求出他們的最長公共子序列。這裡的子序列跟上面的定義一樣，只是從陣列換成字串。
 
 這邊直接給出狀態跟轉移式
 
