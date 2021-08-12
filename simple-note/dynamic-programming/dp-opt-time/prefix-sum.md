@@ -21,5 +21,5 @@ description: 施工中
 1. [LG P2513](https://www.luogu.com.cn/problem/P2513)
 2. [ABC 212E](https://atcoder.jp/contests/abc212/tasks/abc212_e)
 3. [LG P2885](https://www.luogu.com.cn/problem/P2885)
-4. [LG P4099](https://www.luogu.com.cn/problem/P4099)
+4. [LG P4099](https://www.luogu.com.cn/problem/P4099) 沒什麼想法的話.. 不妨改變枚舉順序?
 

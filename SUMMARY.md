@@ -4,6 +4,7 @@
 
 ## 小知識 <a id="simple-note"></a>
 
+* [Data Structure](simple-note/data-structure.md)
 * [Dynamic Programming](simple-note/dynamic-programming/README.md)
   * [DP Time](simple-note/dynamic-programming/dp-time/README.md)
     * [暖身題單](simple-note/dynamic-programming/dp-time/warm-up.md)
@@ -23,7 +24,8 @@
     * [SOS 優化](simple-note/dynamic-programming/dp-opt-time/sos-dp.md)
     * [斜率優化 \(Convex Hull Trick\)](simple-note/dynamic-programming/dp-opt-time/convex-hull-trick.md)
 
-## Data Structure
+## 隨筆
 
-* [Untitled](data-structure/untitled.md)
+* [題解](sui-bi/ti-jie/README.md)
+  * [CF 1557D](sui-bi/ti-jie/cf-1557d.md)
 
