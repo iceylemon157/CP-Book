@@ -20,8 +20,8 @@
     * [前綴和優化](simple-note/dynamic-programming/dp-opt-time/prefix-sum.md)
     * [矩陣快速冪優化](simple-note/dynamic-programming/dp-opt-time/matrix-exponential.md)
     * [資料結構優化](simple-note/dynamic-programming/dp-opt-time/data-structure.md)
-    * [單調隊列優化](simple-note/dynamic-programming/dp-opt-time/monotone-queue.md)
     * [SOS 優化](simple-note/dynamic-programming/dp-opt-time/sos-dp.md)
+    * [單調隊列優化](simple-note/dynamic-programming/dp-opt-time/monotone-queue.md)
     * [斜率優化 \(Convex Hull Trick\)](simple-note/dynamic-programming/dp-opt-time/convex-hull-trick.md)
 
 ## 隨筆
