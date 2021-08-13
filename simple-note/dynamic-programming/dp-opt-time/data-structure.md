@@ -82,5 +82,6 @@ $$dp[i]=\max\limits_{j<i,h[j]<h[i]}\{dp[j]\}+a[i]$$
 2. [CF 1000F](https://codeforces.com/problemset/problem/1000/F)
 3. [ARC 73F](https://atcoder.jp/contests/arc073/tasks/arc073_d)
 4. [\[ZJOI2010\]基站選址](https://www.luogu.com.cn/problem/T175821)
-5. [LG P5298](https://www.luogu.com.cn/problem/P5298)
+5. [CF 1129D](https://codeforces.com/contest/1129/problem/D)
+6. [LG P5298](https://www.luogu.com.cn/problem/P5298)
 
