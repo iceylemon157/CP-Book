@@ -53,3 +53,5 @@ $$dp(i,x)=\sum\limits_{j=0}^3dp(i-1,x\oplus 2^j)$$
 2. [HDU 2294](https://acm.hdu.edu.cn/showproblem.php?pid=2294)
 3. [CF 1182E](https://codeforces.com/contest/1182/problem/E)
 
+
+

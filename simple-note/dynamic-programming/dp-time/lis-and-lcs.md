@@ -6,17 +6,17 @@ description: 這裡介紹基本 LIS 跟 LCS 的作法
 
 ## LIS 最長遞增子序列
 
-這裡我們的遞增考慮非嚴格遞增，嚴格遞增也差不多。
+這裡我們的遞增考慮嚴格遞增，非嚴格遞增也差不多。
 
 ### 題目+講解
 
 #### 題目
 
-給定一個陣列整數陣列$$a_i$$，求他的最長遞增子序列。定義子序列為從陣列中刪掉某幾個位置並且保持剩下的數字相對順序不變。
+> 給定一個陣列整數陣列$$a_i$$，求他的最長遞增子序列。定義子序列為從陣列中刪掉某幾個位置並且保持剩下的數字相對順序不變。
 
 因為相信大家都已經會動態規劃了，這邊直接給出狀態以及轉移方程。
 
-$$dp[i]=\max\limits_{j<i,a[j]\leq a[i]}\{dp[j]+1\}$$
+$$dp[i]=\max\limits_{j<i,a[j]<a[i]}\{dp[j]+1\}$$
 
 如果直接計算，這個東西的複雜度是 $$O(N^2)$$。
 
@@ -39,7 +39,7 @@ $$dp[i]=\max\limits_{j<i,a[j]\leq a[i]}\{dp[j]+1\}$$
 int a[105];
 int LIS() {
     for(int i = 0; i < n; i ++) {
-        if(!vc.empty() or vc.back() <= a[i]) vc.push_back(a[i]);
+        if(!vc.empty() or vc.back() < a[i]) vc.push_back(a[i]);
         else *vc.lower_bound(vc.begin(), vc.end(), a[i]) = a[i];
     }
 }
@@ -50,7 +50,7 @@ int LIS() {
 1. [裸題](https://zerojudge.tw/ShowProblem?problemid=d242)
 2. [Almost 裸題](https://zerojudge.tw/ShowProblem?problemid=f608)
 3. [拆成最少遞增子序列](https://atcoder.jp/contests/abc134/tasks/abc134_e\)
-4. [N維偏序](http://domen111.github.io/UVa-Easy-Viewer/?103)
+4. [N維LIS](http://domen111.github.io/UVa-Easy-Viewer/?103) \(?
 5. [LIS變形1](https://ac.nowcoder.com/acm/contest/11164/D?&headNav=acm)
 6. [LIS變形2](https://codeforces.com/problemset/problem/1468/A)
 
@@ -60,7 +60,7 @@ int LIS() {
 
 #### 題目
 
-給你兩個字串$$a,b$$，請求出他們的最長公共子序列。這裡的子序列跟上面的定義一樣，只是從陣列換成字串。
+> 給你兩個字串$$a,b$$，請求出他們的最長公共子序列。這裡的子序列跟上面的定義一樣，只是從陣列換成字串。
 
 這邊直接給出狀態跟轉移式
 
