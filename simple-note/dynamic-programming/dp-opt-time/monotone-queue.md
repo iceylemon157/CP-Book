@@ -22,7 +22,20 @@ $$dp(i)=h(i)+\max\limits_{l(i)\leq j\leq r(i)}\{B(j)\}$$
 
 單調隊列是一種資料結構，他可以維護一個往同一個方向移動的區間\(也就是\)的最大/小值。
 
+因為我很懶，而且單調隊列是一個相對常見的概念，這邊我先丟一個連結 [OI wiki 單調隊列](https://oi-wiki.org/ds/monotonous-queue/) 。未來如果我心血來潮的話會回來補他。
 
+### 總結
 
+要注意的是，通常在做的過程中 DP 是多維的，但是如果可以把其他維度**固定**讓每次轉移都變成 1D/1D 的形式的話那麼也可以使用單調隊列優化\(多重背包就是一個例子\)。有時候改變枚舉順序他也會變成單調隊列。
 
+其實單調隊列優化也算一種的資料結構優化，只是因為他維護的方式比較特別把他提出來講。在下一個章節我們會提到一個更一般形式的優化。
+
+## 題目
+
+1. [cses 1644](https://cses.fi/problemset/task/1644)
+2. [有限背包](https://tioj.ck.tp.edu.tw/problems/1407)
+3. [CF 372C](https://codeforces.com/problemset/problem/372/C)
+4. [TIOJ 1841](https://tioj.ck.tp.edu.tw/problems/1841/) \(還沒做\)
+5. [NOI 2011 NOI嘉年華](https://www.luogu.com.cn/problem/P1973) \(還沒做\)
+6. AHOY~\(x [AHOI/HNOI2017 大佬](https://www.luogu.com.cn/problem/P3724) \(還沒做\)
 
