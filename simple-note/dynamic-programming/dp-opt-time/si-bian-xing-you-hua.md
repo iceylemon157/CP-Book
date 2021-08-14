@@ -24,7 +24,7 @@ description: 施工中
 
 這裡先再次放上 1D/1D DP 的標準轉移式
 
-$$dp(i)=\max\limits_{l(i)\leq j\leq r(i)}\{dp(j)+w(i,j)\}$$
+$$dp(i)=\max(min)\{dp(j)+w(i,j)\}$$
 
 **四邊形不等式：若**$$w(i,j)$$**滿足四邊形不等式，那麼對於任意**$$a\leq b\leq c\leq d$$，**皆有**$$w(a,c)+w(b,d)\leq (\geq)\ w(a,d)+w(b,c)$$
 
@@ -34,7 +34,9 @@ $$dp(i)=\max\limits_{l(i)\leq j\leq r(i)}\{dp(j)+w(i,j)\}$$
 
 **定理：若**$$w(i,j)$$**滿足四邊形不等式，那麼這個 1D/1D DP 具有決策單調性**
 
-\*\*\*\*
+不同的 min/max 跟大小於符號適用的 DP 跟單調性是有些許差別的：
+
+* 當四邊形不等式不等號為$$\leq$$時，若轉移方程取 min，那麼最優決策點的方向
 
 
 
