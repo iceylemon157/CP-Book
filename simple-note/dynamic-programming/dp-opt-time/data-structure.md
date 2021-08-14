@@ -1,7 +1,3 @@
----
-description: 施工中
----
-
 # 資料結構優化
 
 ## 概述
@@ -79,7 +75,7 @@ $$dp[i]=\max\limits_{j<i,h[j]<h[i]}\{dp[j]\}+a[i]$$
 ## 題目
 
 1. [CF 1557D](https://codeforces.com/contest/1557/problem/D) \(PS. 這題有不需要DP優化的作法 [這篇](https://oosheepyerd79135.gitbook.io/iceylemon_cp/sui-bi/ti-jie/cf-1557d)\)
-2. [CF 1000F](https://codeforces.com/problemset/problem/1000/F)
+2. [CF 1000F](https://codeforces.com/problemset/problem/1000/F) 聽說這題不是DP，但我懶得找其他題了
 3. [ARC 73F](https://atcoder.jp/contests/arc073/tasks/arc073_d)
 4. [\[ZJOI2010\]基站選址](https://www.luogu.com.cn/problem/T175821)
 5. [CF 1129D](https://codeforces.com/contest/1129/problem/D)
