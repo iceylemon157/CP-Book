@@ -190,6 +190,7 @@ void solve() {
             if(dp[t.l] + w(t.i, t.l) > dp[i] + w(i, t.l)) {
                 dq.pop_back();
             }
+            else break;
         }
         // 特判全部被移掉的情形
         if(dq.empty()) {
