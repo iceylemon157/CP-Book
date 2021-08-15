@@ -170,20 +170,25 @@ inline int w(int i, int j) {
 void solve() {
     dq.push_back({0, 1, n});
     for(int i = 1; i <= n - 1; i ++) {
-        // 先
+        // 先得到dp[i]
         dp[i] = dp[dq.front().i] + w(i, dq.front().i);
+        // 把"過期"的區間pop掉
         if(dq.front().r == i) dq.pop_front();
+        // 先移除掉會被i完全取代掉的區間
         while(!dq.empty()) {
             segment t = dq.back();
             if(dp[t.l] + w(t.i, t.l) > dp[i] + w(i, t.l)) {
                 dq.pop_back();
             }
         }
+        // 特判全部被移掉的情形
         if(dq.empty()) {
             dq.push_back({i, i + 1, n});
             continue;
         }
-        int x = dq.back().i, l = dq.back().l, r = dq.back().r;
+        // 開始進行二分搜
+        segment tmp = dq.back();
+        int x = tmp.i, l = tmp.l, r = tmp.r;
         while(l < r) {
             int mid = (l + r) >> 1;
             if(dp[x] + w(x, mid) >= dp[i] + w(i, mid)) {
@@ -191,11 +196,21 @@ void solve() {
             }
             else l = mid + 1;
         }
+        dq.pop_back();
+        dq.push_back({tmp.i, tmp.l, r - 1});
         dq.push_back({i, r, n});
     }
 }
 ```
 {% endcode %}
+
+其實上面分治的作法也可以使用這個方法去實作，但是這個方法有一個缺陷，那就是如果單個$$w$$的計算複雜度高的話，那麼就會二分搜的複雜度就會退化。
+
+但是如果$$w$$可以透過上一個計算出來的$$w'$$快速的推導出來，那麼分治法可以解決這個類型的問題。\(當然，$$dp$$的值還是不能互相影響\)。上述 CF 868F 這題就只能使用分治去做。
+
+### 四邊形優化題目
+
+1. [\[NOI 2009\] 詩人小G](https://www.luogu.com.cn/problem/P1912)
 
 
 
