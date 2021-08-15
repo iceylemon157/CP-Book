@@ -226,7 +226,7 @@ void solve() {
 
 $$dp(l,r)=\min\limits_{k<j}\{dp(l,k)+dp(k+1,r)+w(l,r)\}$$
 
-$$dp(i,j)=\min\limits_{k<j}\{dp(i-1,k)+w(i,j)\}$$
+$$dp(i,j)=\min\limits_{k<j}\{dp(i-1,k)+w(i,j)\}$$\(這個就是上面分治優化的轉移式\)
 
 如果$$w$$滿足**四邊形不等式**以及**區間單調性**，那麼我們可以在$$O(N^2)$$的時間內解決這兩個問題。
 
