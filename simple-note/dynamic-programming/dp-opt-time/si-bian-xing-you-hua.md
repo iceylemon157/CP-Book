@@ -179,11 +179,11 @@ inline int w(int i, int j) {
 
 void solve() {
     dq.push_back({0, 1, n});
-    for(int i = 1; i <= n - 1; i ++) {
+    for(int i = 1; i <= n; i ++) {
         // 先得到dp[i]
         dp[i] = dp[dq.front().i] + w(i, dq.front().i);
         // 把"過期"的區間pop掉
-        if(dq.front().r == i) dq.pop_front();
+        if(dq.front().r <= i) dq.pop_front();
         // 先移除掉會被i完全取代掉的區間
         while(!dq.empty()) {
             segment t = dq.back();
