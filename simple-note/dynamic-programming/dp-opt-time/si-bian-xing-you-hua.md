@@ -211,6 +211,15 @@ void solve() {
 ### 四邊形優化題目
 
 1. [\[NOI 2009\] 詩人小G](https://www.luogu.com.cn/problem/P1912)
+2. [超大畫框設置](https://tioj.ck.tp.edu.tw/problems/1283)
+3. [特殊的0/1背包問題](https://loj.ac/p/6039)
+
+## 2D/1D DP 與四邊形不等式
+
+## 參考資料
+
+1. 2021 IOIC 講義
+2. \*\*\*\*[**\[总结\]一些 DP 优化方法**](https://www.cnblogs.com/NaVi-Awson/p/12240616.html)\*\*\*\*
 
 
 
