@@ -261,6 +261,12 @@ $$dp(i,j)=\min\limits_{k<j}\{dp(i-1,k)+w(k+1,j)\}$$\(這個就是上面分治優
 
 至此我們也解決了 2D/1D 的問題。而我們也給出了在滿足區間單調性的條件下，式\(2\) 甚至可以達到$$O(N^2)$$的複雜度，在實際運用上需要多加注意。
 
+### 題目
+
+1. [Atcoder DP Contest N](https://atcoder.jp/contests/dp/tasks/dp_n)
+2. [IOI 2000 郵局](https://tioj.ck.tp.edu.tw/problems/1449/)
+3. [CF 321E](https://codeforces.com/problemset/problem/321/E) 上面出現過了，這邊再出現一次
+
 ## 滿足四邊形不等式的函數
 
 四邊形優化最難的地方就是看出他滿足四邊形不等式。在競賽中我們可以試著用打表的方式來驗證他是否滿足，但是這邊還是介紹一些簡單的規則來方便判斷一個函數是否滿足四邊形不等式：
