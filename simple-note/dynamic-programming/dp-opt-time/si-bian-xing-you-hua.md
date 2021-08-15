@@ -105,7 +105,19 @@ $$dp(i)=\min\limits_{j<i}\{w(i,j)\}$$，其中$$w(i,j)$$是一個跟$$dp$$無關
 
 {% code title="分治優化模板" %}
 ```cpp
-
+void solve(int x, int l, int r, int ql, int qr) {
+    if(l > r) return;
+    int mid = (l + r) >> 1, p = 0;
+    dp[x][mid] = 1e18;
+    for(int i = ql; i <= min(qr, mid - 1); i ++) {
+        if(dp[x][mid] >= dp[x - 1][i] + w(i,j)) {
+            dp[x][mid] = dp[x - 1][i] + w(i,j);
+            p = i;
+        }
+    }
+    solve(x, mid + 1, r, p, qr);
+    solve(x, l, mid - 1, ql, p);
+}
 ```
 {% endcode %}
 
