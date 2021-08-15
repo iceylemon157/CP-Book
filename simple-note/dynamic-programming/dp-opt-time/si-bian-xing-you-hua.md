@@ -93,7 +93,7 @@ $$dp(i)=\min\limits_{j<i}\{w(i,j)\}$$，其中$$w(i,j)$$是一個跟$$dp$$無關
 
 而只要滿足上面這個式子，我們可以考慮使用以下分治方法解決：
 
-令$$solve(L,R,L',R')$$函數代表對於$$dp(L)$$到$$dp(R)$$的 DP 值，在已知決策點落在$$[L',R']$$的條件下求出 DP 值。首先我們先考慮$$mid=\frac{l+r}{2}$$，我們先暴力枚舉$$[L',R']$$求出$$dp(mid)$$以及他的最優決策點。由決策單調性我們知道$$\forall j\in[L,mid)$$，$$p(j)\leq p(mid)$$，並且$$\forall j\in(mid,R]$$，$$p(mid)\leq p(j)$$，那麼我們就可以把這個問題拆成兩個子問題分治遞迴下去做了。\($$solve(L,mid-1,L',p[mid]),solve(mid+1,R,p[mid],R')$$\)
+令$$solve(L,R,L',R')$$函數代表對於$$dp(L)$$到$$dp(R)$$的 DP 值，在已知決策點落在$$[L',R']$$的條件下求出 DP 值。首先我們先考慮$$mid=\frac{l+r}{2}$$，我們先暴力枚舉$$[L',R']$$求出$$dp(mid)$$以及他的最優決策點。由決策單調性我們知道$$\forall j\in[L,mid)$$，$$p(j)\leq p(mid)$$，並且$$\forall j\in(mid,R]$$，$$p(mid)\leq p(j)$$，那麼我們就可以把這個問題拆成兩個子問題分治遞迴下去做了：$$solve(L,mid-1,L',p[mid]),solve(mid+1,R,p[mid],R')$$
 
 於是我們就可以用$$O(NlogN)$$的時間內解掉這題，回到原本分治優化的轉移式就只需要把這件事情做$$N$$次，也就是$$O(N^2logN)$$
 
