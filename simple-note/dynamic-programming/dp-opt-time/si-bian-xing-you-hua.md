@@ -101,13 +101,27 @@ $$dp(i)=\min\limits_{j<i}\{w(i,j)\}$$，其中$$w(i,j)$$是一個跟$$dp$$無關
 
 一個我在網路上看到的有趣的事，上述的作法其實就是 CDQ 分治的思想，所以在某些特別情況下可以使用 CDQ 分治來跟分治優化進行搭配。\(但是由於 iceylemon 不太熟 CDQ 所以有興趣的讀者可以自行研究，如果會了歡迎來跟我討論&gt;&lt;\)。
 
+這裡給上分治優化的模板：
 
+{% code title="分治優化模板" %}
+```cpp
+待補
+```
+{% endcode %}
 
+### 分治優化題目
 
+1. [CF 868F](https://codeforces.com/problemset/problem/868/F)
+2. [\[POI 2011\] Lightning Conductor](https://www.luogu.com.cn/problem/P3515)
+3. [IOI 2000 郵局](https://tioj.ck.tp.edu.tw/problems/1449) \(這題會多次出現在各個地方喔\)
 
+### 備註
 
+事實上這個轉移式：
 
+> $$dp(i,j)=\min\limits_{k<j}\{dp(i-1,k)+w(k,j)\}$$
 
+在$$w$$滿足更特別的性質的時候可以把時間複雜度壓到$$O(N^2)$$，在接下來 2D/1D 的地方會提到。
 
 
 
