@@ -123,9 +123,10 @@ void solve(int x, int l, int r, int ql, int qr) {
 
 ### 分治優化題目
 
-1. [CF 868F](https://codeforces.com/problemset/problem/868/F)
+1. [超大畫框設置](https://tioj.ck.tp.edu.tw/problems/1283)
 2. [\[POI 2011\] Lightning Conductor](https://www.luogu.com.cn/problem/P3515)
-3. [CF 321E](https://codeforces.com/contest/321/problem/E)
+3. [CF 868F](https://codeforces.com/problemset/problem/868/F)
+4. [CF 321E](https://codeforces.com/contest/321/problem/E)
 
 ### 備註
 
@@ -231,8 +232,7 @@ void solve() {
 ### 四邊形優化題目
 
 1. [\[NOI 2009\] 詩人小G](https://www.luogu.com.cn/problem/P1912)
-2. [超大畫框設置](https://tioj.ck.tp.edu.tw/problems/1283)
-3. [特殊的0/1背包問題](https://loj.ac/p/6039)
+2. [特殊的0/1背包問題](https://loj.ac/p/6039)
 
 ## 2D/1D DP 與四邊形不等式
 
