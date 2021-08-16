@@ -24,6 +24,7 @@
     * [單調隊列優化](simple-note/dynamic-programming/dp-opt-time/monotone-queue.md)
     * [斜率優化 \(Convex Hull Trick\)](simple-note/dynamic-programming/dp-opt-time/convex-hull-trick.md)
     * [四邊形優化](simple-note/dynamic-programming/dp-opt-time/quadrangle-optimization.md)
+    * [Aliens 優化](simple-note/dynamic-programming/dp-opt-time/aliens-you-hua.md)
 
 ## 隨筆
 
