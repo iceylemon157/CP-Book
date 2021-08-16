@@ -174,7 +174,7 @@ struct segment {
 int n, dp[maxn];
 deque<segment> dq;
 
-inline long double w(int l, int r) {
+inline int long double w(int l, int r) {
     // return a value
 }
 
