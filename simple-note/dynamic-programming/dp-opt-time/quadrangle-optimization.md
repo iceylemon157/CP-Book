@@ -121,7 +121,7 @@ void solve(int x, int l, int r, int ql, int qr) {
 ```
 {% endcode %}
 
-### 分治優化題目
+### 分治優化類型題目
 
 1. [超大畫框設置](https://tioj.ck.tp.edu.tw/problems/1283)
 2. [\[POI 2011\] Lightning Conductor](https://www.luogu.com.cn/problem/P3515)
