@@ -11,7 +11,7 @@ description: SOS DP，Sum over Subsets Dynamic Programming，又稱高維前綴�
 
 為了講解 SOS DP 我們先引入一道簡單的題目：
 
-> 給你一個有長度為$$2^N$$的陣列$$A_i$$，請你對於$$i\in [1,2^N]$$計算出$$F(i)$$，其中$$F(i)=\sum\limits_{j\subseteq i}a[i]$$。$$j$$也就是$$i$$的子集。
+> 給你一個有長度為$$2^N$$的陣列$$A_i$$，請你對於$$i\in [1,2^N]$$計算出$$F(i)$$，其中$$F(i)=\sum\limits_{j\subseteq i}A[i]$$。$$j$$也就是$$i$$的子集。
 
 這個問題看起來並不是 DP，就只是單純求和而已。我們在枚舉子集DP 那邊已經講過了，我們可以$$3^N$$把這個問題解決。而 SOS DP 告訴我們其實他可以被做到$$N\cdot2^N$$。
 
