@@ -126,6 +126,8 @@ void solve() {
 ```
 {% endcode %}
 
+PS. 這題還可以做得更快，先把白邊跟黑邊分開 sort 。之後 Kruskal 要排序的時候用雙指針排序即可。複雜度少一個log。
+
 上面介紹了 Aliens 優化的用法，下面這邊來一題套用在 DP 上的用法。
 
 ## APIO 2010 Commando 魔改題
@@ -161,7 +163,9 @@ $$dp(i)$$代表前$$i$$個的答案，$$dp(i)=\min\limits_{j<i}\{dp(j)+(sum(i)-s
 2. [CF 739E](https://codeforces.com/contest/739/problem/E) \(待做\)
 3. [林克卡特樹](https://www.luogu.com.cn/problem/P4383) \(待做\)
 
+## 參考文獻
 
+1. Creeper\_LKF，博客园，[『关于WQS二分算法以及其一个细节证明』](https://www.cnblogs.com/CreeperLKF/p/9045491.html)
 
 
 
