@@ -62,6 +62,70 @@ Aliens 優化是用來解決 K-約束問題的一種演算法。什麼叫 K-約�
 
 雖然我們看起來已經做完了，這邊還有一些細節要注意：可能會有某些點是沒辦法被**整數斜率**的直線切到的。舉個例子：令$$m$$是要切的點，斜率$$k$$的線切到的是$$m-1$$而$$k+1$$切到的是$$m+1$$，此時$$m$$就不能被整數切到。這時候就可以使用 **小數二分**。但是小數二分的效率並不高，在某些題目可能會 TLE。事實上很多時候可以透過題目性質來避免掉小數二分。例如這題就是一個例子。如果出現了上述的這種情形，那就代表一定存在某條黑邊的邊權=某條白邊的邊權。這時候在做最小生成樹的時候就只要優先選擇白邊就可以了。證明留給讀者自行思考。下面參考資料也有。
 
+{% code title="黑白生成樹部分程式碼" %}
+```cpp
+#define pii pair<int, int>
+struct E {
+    int a, b, v, c;
+} e[maxn], ae[maxn];
+int pa[maxn], sz[maxn];
+void init_dsu(int n) { for(int i = 1; i <= n; i ++) pa[i] = i, sz[i] = 1; }
+int get(int x) { return pa[x] == x? x : pa[x] = get(pa[x]); }
+void uni(int a, int b) {
+    a = get(a), b = get(b);
+    if(a == b) return;
+    if(sz[a] > sz[b]) swap(a, b);
+    sz[b] += sz[a];
+    pa[a] = b;
+}
+pii kruskal(int n, int m) {
+    init_dsu(n);
+    sort(e + 1, e + m + 1, [](E a, E b) {
+        if(a.v == b.v) return a.c < b.c;
+        return a.v < b.v;
+    });
+    int ret = 0, cnt = 0, val = 0;
+    for(int i = 1; i <= m; i ++) {
+        int a = get(e[i].a), b = get(e[i].b);
+        if(a == b) continue;
+        uni(a, b);
+        cnt ++;
+        if(e[i].c == 0) ret ++;
+        val += e[i].v;
+    }
+    return make_pair(ret, val);
+}
+
+int n, m, tar;
+
+void solve() {
+    scanf("%d%d%d", &n, &m, &tar);
+    for(int i = 1; i <= m; i ++) {
+        int a, b, c, v;
+        scanf("%d%d%d%d", &a, &b, &v, &c);
+        a ++, b ++;
+        ae[i] = {a, b, v, c};
+    }
+    int l = -100, r = 100,  tt = 10, ans = 1e18;
+    while(l <= r) {
+        int mid = (l + r) >> 1;
+        for(int i = 1; i <= m; i ++) {
+            e[i] = ae[i];
+            if(e[i].c == 0) e[i].v -= mid;
+        }
+        pii tp = kruskal(n, m);
+        int t = tp.f, v = tp.s;
+        if(t < tar) l = mid + 1;
+        else {
+            r = mid - 1;
+            ans = v + mid * tar;
+        }
+    }
+    printf("%d\n", ans);
+}
+```
+{% endcode %}
+
 上面介紹了 Aliens 優化的用法，下面這邊來一題套用在 DP 上的用法。
 
 ## APIO 2010 Commando 魔改題
