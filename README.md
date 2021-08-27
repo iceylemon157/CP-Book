@@ -14,13 +14,13 @@ description: 因為太無聊了所以來打程式 希望從解題獲得樂趣的
 
 codeforces id: iceylemon157
 
-
-
 ## 重要的事情
 
 **フブキ大好き**
 
 ![](.gitbook/assets/0004809421_b.png)
 
+## 友情連結
 
+前往 [LittlePants競程筆記](https://gilbert12-tw.gitbook.io/littlepants_cp_note/) 獲得更多進階內容
 

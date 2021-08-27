@@ -1,3 +1,7 @@
+---
+description: '斜率優化、又稱凸包優化，英文叫做 Convex Hull Trick, 簡稱 CHT'
+---
+
 # 斜率優化 \(Convex Hull Trick\)
 
 ## 介紹
