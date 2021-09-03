@@ -25,6 +25,7 @@
     * [斜率優化 \(Convex Hull Trick\)](simple-note/dynamic-programming/dp-opt-time/convex-hull-trick.md)
     * [四邊形優化](simple-note/dynamic-programming/dp-opt-time/quadrangle-optimization.md)
     * [Aliens 優化](simple-note/dynamic-programming/dp-opt-time/aliens-trick.md)
+    * [Slope Trick](simple-note/dynamic-programming/dp-opt-time/slope-trick.md)
 
 ## 隨筆
 
