@@ -1,3 +1,7 @@
+---
+description: 動態規劃優化時間
+---
+
 # DP OPT Time
 
 ## 介紹
