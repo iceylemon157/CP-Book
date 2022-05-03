@@ -29,7 +29,7 @@ $$dp[i]=\max\limits_{j<i,a[j]<a[i]}\{dp[j]+1\}$$
 
 ### Vector + 二分搜
 
-這個做法的想法就是維護一個 Vector $$V$$，而 $$V[i]$$ 代表 **長度為** $$i$$ **增子序列的最後一個數字的最小值是多少。**會維護這個陣列是因為如果要加一個數到一個之前的 LIS，結尾的值越小越容易加進去。而一個簡單的觀察會發現這個陣列會是遞增的\(如果不能理解的話可以想想如果不是遞增會發生什麼事\)。可以知道這個 Vector 最後一個非零的位置就是 LIS 的長度。\(因為 LIS 是最長遞增子序列\)
+這個做法的想法就是維護一個 Vector $$V$$，而 $$V[i]$$ 代表 **長度為** $$i$$ **增子序列的最後一個數字的最小值是多少。**會維護這個陣列是因為如果要加一個數到一個之前的 LIS，結尾的值越小越容易加進去。而一個簡單的觀察會發現這個陣列會是遞增的(如果不能理解的話可以想想如果不是遞增會發生什麼事)。可以知道這個 Vector 最後一個非零的位置就是 LIS 的長度。(因為 LIS 是最長遞增子序列)
 
 所以我們就在枚舉的過程中順便維護這個陣列。而當我們處理到第 $$i$$ 個數字的時候，我們就比較說 $$a[i]$$是否大於放入 Vector 的最後一個數字，也就是做完前 $$i$$ 個數字的最大 LIS 長度。如果 $$a[i]$$ 比較大的話就把 $$a[i]$$ 加到 Vector 的最後面，意思也就是 LIS 長度增加 $$1$$。反之就代表有某一個長度的遞增子序列的最小值可以被換成 $$a[i]$$。因為這個 Vector 是遞增的，所以可以利用二分搜來找到那個位置。
 
@@ -49,9 +49,9 @@ int LIS() {
 
 1. [裸題](https://zerojudge.tw/ShowProblem?problemid=d242)
 2. [Almost 裸題](https://zerojudge.tw/ShowProblem?problemid=f608)
-3. [拆成最少遞增子序列](https://atcoder.jp/contests/abc134/tasks/abc134_e\)
-4. [N維LIS](http://domen111.github.io/UVa-Easy-Viewer/?103) \(?
-5. [LIS變形1](https://ac.nowcoder.com/acm/contest/11164/D?&headNav=acm)
+3. [拆成最少遞增子序列](https://atcoder.jp/contests/abc134/tasks/abc134\_e/)
+4. [N維LIS](http://domen111.github.io/UVa-Easy-Viewer/?103) (?
+5. [LIS變形1](https://ac.nowcoder.com/acm/contest/11164/D?\&headNav=acm)
 6. [LIS變形2](https://codeforces.com/problemset/problem/1468/A)
 
 ## LCS 最長公共子序列
@@ -72,9 +72,9 @@ LCS 沒什麼好說的，直接來看例題
 
 ### 例題
 
-1. [裸題](https://atcoder.jp/contests/dp/tasks/dp_f)
+1. [裸題](https://atcoder.jp/contests/dp/tasks/dp\_f)
 2. [Edit Distance](https://cses.fi/problemset/task/1639)
-3. [LCS變形](https://atcoder.jp/contests/abc130/tasks/abc130_e)
+3. [LCS變形](https://atcoder.jp/contests/abc130/tasks/abc130\_e)
 4. [LCIS](https://codeforces.com/problemset/problem/10/D)
 
 
@@ -92,6 +92,4 @@ LCS 沒什麼好說的，直接來看例題
 ### 例題
 
 1. [\[UVA 10635\]](https://vjudge.net/problem/UVA-10635)
-
-
 
