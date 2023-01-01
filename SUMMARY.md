@@ -4,6 +4,9 @@
 
 ## 小知識 <a href="#simple-note" id="simple-note"></a>
 
+* [施工中的筆記](simple-note/shi-gong-zhong-de-bi-ji/README.md)
+  * [Tree](simple-note/shi-gong-zhong-de-bi-ji/tree/README.md)
+    * [重心剖分](simple-note/shi-gong-zhong-de-bi-ji/tree/zhong-xin-pou-fen.md)
 * [Dynamic Programming](simple-note/dynamic-programming/README.md)
   * [DP Time](simple-note/dynamic-programming/dp-time/README.md)
     * [暖身題單](simple-note/dynamic-programming/dp-time/warm-up.md)
